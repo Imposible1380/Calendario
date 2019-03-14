@@ -1,0 +1,635 @@
+/* HTML CALENDARIO */
+/*PLANTILLA*/
+html{
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%
+}
+body{
+    margin:0
+}
+
+html,body{
+    font-size:15px;
+    line-height:1.5
+}
+html{
+    overflow-x:hidden
+}
+h1{
+    font-size:36px
+}
+h2{
+    font-size:30px
+}
+h3{
+    font-size:24px
+}
+h4{
+    font-size:20px
+}
+h5{
+    font-size:18px
+}
+h6{
+    font-size:16px
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:400;
+    margin:10px 0
+}
+a{
+    color:#bb1919;
+    cursor:pointer;
+    font-weight:500;
+    text-decoration:none;
+
+}
+a:hover{
+    color:#5a2929;
+
+}
+.content,.w3-auto{
+    margin-left:auto;
+    margin-right:auto
+}
+.content{
+    max-width:980px
+}
+.w3-auto{
+    max-width:1140px
+}
+
+/*MENÚ*/
+.menu {
+    position: relative;
+}
+.menu nav {
+    display: block;
+    background: #bb1919;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+.menu nav > a {
+    float: left;
+    color: #fff;
+    padding: 1.8em;
+    border-right: 1px solid rgba(0, 0, 0, 0.35);
+    transition: background .4s;
+    display: block;
+}
+.menu nav > a:hover {
+    background: rgba(0,0,0,0.5);
+}
+
+/*BOTONES*/
+.menu .drop {
+    color: #fff;
+    padding: 0.6em;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    cursor: pointer;
+}
+.menu .drop svg {
+    fill: #fff;
+    vertical-align: middle;
+}
+
+.menu input {display: none}
+
+@media only screen and (max-width: 900px) {
+    .menu {background: #bb1919;}
+    .menu .drop {display: inline-block;}
+    .menu nav {
+        position: absolute;
+        z-index: 600;
+        background: rgba(0,0,0,0.80);
+        min-width: 20rem;
+        display: none;
+    }
+    .menu nav > a {
+        float: none;
+        border: 0 none;
+    }
+/*if => open*/
+.menu nav.open {
+    display: block;/*el menu aparece*/
+}
+.menu .drop.open {
+    background: rgba(0,0,0,0.65);/*el boton cambia de color*/
+}
+
+/*PURO*/
+#toggle:checked ~ nav{
+    display: block;
+}
+#toggle:checked ~ label{
+    background: rgba(0,0,0,0.65);
+}
+}
+/*Portada*/
+.portada {
+    background: url(https://3.bp.blogspot.com/-id0MHFXDwsM/XIm0s9isedI/AAAAAAAAAiM/sLSupvYLgE4Q0BGSQqddVfjlxkJqIN71ACLcBGAs/s1600/154318814886.webp)repeat-y fixed top left;
+    color: #fff;
+    text-align: center;
+    background-size: 100%;
+    padding: 36px;
+}
+/*Cuerpo*/
+.content{
+    margin-left:auto;
+    margin-right:auto
+}
+.content{
+    max-width:980px
+}
+.padding{
+    padding-top:64px;
+    padding-bottom:64px
+}
+.calendario {
+    background: #f2f2f2;
+    color: #000;
+    padding: 2em;
+}
+/*FOOTER*/
+.footer {
+    background: url(https://2.bp.blogspot.com/-noGvK8WkXL8/XIm2cY_QKBI/AAAAAAAAAig/vqwDeuY_o4c6HSRCrxQ0wNK-lk5hruxvACLcBGAs/s1600/1530233597142.webp) repeat fixed top left;
+    text-align: center;
+    background-size: 100%;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+.footer2 {
+    background: #00000080;
+    text-align: center;
+    color:#fff;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+@keyframes love {
+    to {
+        transform: scale(1)
+    }
+    from {
+        transform: scale(1.5)
+    }
+}
+.love {
+    display: inline-block;
+    animation: love 01s infinite
+}
+.fab {
+    padding: 5px;
+    font-size: 20px;
+}
+
+/*IMAGENES DEL CALENDARIO*/
+/*FONDO, DIMENSIONES*/
+*,:before,:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+.Column.A01,.Rows.A01>*{width:50%} /*Celular*/
+
+@media all and (min-width:900px){
+.DX[class*=Row]{
+    display:-ms-flexbox;
+    display:flex;
+    display:-webkit-flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+    }
+    .DX.Rows>*,.DX.Row.DFluid>.DFixed{
+    -webkit-flex:none;
+    -ms-flex:none;
+    flex:none;
+    max-width:100%
+    }
+    .DX.Row.DFluid>*{
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1
+    }
+.Column.B02,.Rows.B02>*{
+    width:20%
+    }
+}
+
+/*CUERPO DE FONDO*/
+.Rows,.Sp20[class*=Row]{
+    margin:-20px -10px 20px
+}
+.Rows>*,.Sp20[class*=Row]>*{
+    padding:20px 10px 0
+}
+[class*=List]{
+    margin:0;
+    padding:0;
+    list-style-type:none
+}
+.AX[class*=Row],.StCh[class*=Row]>*{
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+    -ms-flex-flow:row wrap;
+    flex-flow:row wrap
+}
+.Anime{
+    position:relative
+}
+.Anime:before{
+    position:absolute;
+    z-index:1;
+    content:'';
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+    border-radius:3px;
+    box-shadow:0 0 5px rgba(0,0,0,.05)
+}
+.Anime>*{
+    position:relative;
+    z-index:2
+}
+.Anime .Image{
+    position:relative;
+    padding-top:143.33333333333334%;
+    overflow:hidden
+}
+
+.Anime .Image img{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-radius:3px 3px 0 0
+}
+.Anime .Title{
+    margin-bottom:0;
+    padding:10px;
+    font-size:15px;
+    line-height:20px
+}
+.Anime .Title a{
+    display:block;
+    overflow:hidden;
+    max-height:30px
+}
+
+
+/*INFO FLOTANTE*/
+
+.Anime.alt:before,.Anime.alt .Type:before,.Anime.alt .Type:after{
+    display:none
+}
+.Anime.alt .Image{
+    margin-bottom:5px;
+    overflow:inherit;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow:0 3px 5px rgba(0,0,0,.1)
+}
+.Anime.alt figure img{
+    border-radius:5px;
+    max-width:calc(100% - 10px);
+    max-height:calc(100% - 10px);
+    left:5px;top:5px
+}
+.Anime.alt .Description{
+    visibility:hidden;
+    opacity:0;
+    position:absolute;
+    transition:.2s;
+    border-radius:5px;
+    overflow:hidden;
+    line-height:20px;
+    font-size:12px;
+}
+.Anime.alt .Description:before{
+    content:'';
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:70px;
+    border-radius:0 0 5px 5px;
+    background:-moz-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background:-webkit-linear-gradient(top,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+}
+.Anime.alt.B .Image{
+    margin-bottom:10px
+}
+.Anime.alt.B .Description.nhvrbx{
+    pointer-events:none
+}
+.Anime.alt.B .Description{
+    width:270px;
+    left:90%;
+    top:-10px;
+    height:auto;
+    background-color:#3d484e;
+    box-shadow:0 0 30px rgba(0,0,0,.8);
+    padding:15px;
+    color:#fff;
+    z-index:10
+}
+.Anime.alt.B .Description:before{
+    display:none
+}
+.Anime.alt.B .Description .Title{
+    color:#fff;
+    padding-right:0;
+    margin-bottom:10px
+}
+.Anime.alt.B .Description p:before{
+    display:none
+}
+.Anime.alt>a>.Title{
+    font-size:13px;
+    white-space:normal;
+    line-height:20px;
+    font-weight:700;
+    max-height:none;
+    text-align:center;
+    color:#000;
+    transition:.2s;
+    padding:0
+}
+.Anime.alt>a:hover>.Title{
+    color:#bb1919
+}
+@media all and (min-width:1000px){
+    .Anime.alt.B:hover .Description{
+        opacity:1;
+        visibility:visible
+    }
+    .Anime.alt.B:hover .Image,.Anime.alt.B .Image .Description{
+    -webkit-transform:none;
+    -moz-transform:none;
+    -o-transform:none;
+    transform:none
+    }
+}
+@media all and (min-width:900px) and (max-width:1000px){
+    .ListAnimes>li:nth-child(4n) .Anime.alt.B .Description{
+        left:auto;right:50%
+    }
+}
+@media all and (min-width:1100px){
+    .ListAnimes>li:nth-child(5n) .Anime.alt.B .Description{
+        left:auto;right:50%
+    }
+}
+.Button.URL{
+    color:#fff;
+    float:right;
+    background: linear-gradient(110deg,#b83838 10%,#ff5555 90%);
+    line-height:30px;
+    padding:0 15px;
+    font-size:12px;
+    margin-top:5px;
+    border-radius:15px
+}
+.Button.URL:hover{
+    transform:scale(1.1)
+}
+.Sinopsis{
+    background: linear-gradient(110deg,#38b6b8 10%,#5562ff 90%);
+    color:#fff;
+    line-height: 30px;
+    padding: 5 15px;
+    font-size: 12px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+.Estreno {
+    color: #fff;
+    text-align: center;
+    float: left;
+    background: linear-gradient(110deg,#1b1833 10%,#2f2777 90%);
+    line-height: 30px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 12px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+.Estreno:hover{
+    color:#fff;
+    transform:scale(1.1)
+}
+/*ETIQUETA PELICULA*/
+.TipoAnime{
+    position:absolute;
+    left:-5px;
+    top:-5px;
+    overflow:hidden;
+    width:70px;
+    height:70px;
+    z-index:3
+}
+.TipoAnime span{
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    position:absolute;
+    left:-25px;
+    top:10px;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    width:100px;
+    text-align:center;
+    text-transform:uppercase;
+    background-color:#01ae43;
+    z-index:2;
+    line-height:25px
+}
+.TipoAnime:before,.TipoAnime:after{
+    position:absolute;
+    width:5px;
+    height:5px;
+    content:'';
+    z-index:1
+}
+.TipoAnime:before{
+    left:0;
+    bottom:5px;
+    background-color:#007a2d;
+    height:7px
+}
+.TipoAnime:after{
+    right:5px;
+    top:0;
+    background-color:#007a2d;
+    width:7px
+}
+/*ETIQUETA PELÍCULA*/
+.TipoPelicula{
+    position:absolute;
+    left:-5px;
+    top:-5px;
+    overflow:hidden;
+    width:70px;
+    height:70px;
+    z-index:3
+}
+.TipoPelicula span{
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    position:absolute;
+    left:-25px;
+    top:10px;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    width:100px;
+    text-align:center;
+    text-transform:uppercase;
+    background-color:#bb0000;
+    z-index:2;
+    line-height:25px
+}
+.TipoPelicula:before,.TipoPelicula:after{
+    position:absolute;
+    width:5px;
+    height:5px;
+    content:'';
+    z-index:1
+}
+.TipoPelicula:before{
+    left:0;
+    bottom:5px;
+    background-color:#bb1919;
+    height:7px
+}
+.TipoPelicula:after{
+    right:5px;
+    top:0;
+    background-color:#bb1919;
+    width:7px
+}
+/*ETIQUETA OVA*/
+.TipoOva{
+    position:absolute;
+    left:-5px;
+    top:-5px;
+    overflow:hidden;
+    width:70px;
+    height:70px;
+    z-index:3
+}
+.TipoOva span{
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    position:absolute;
+    left:-25px;
+    top:10px;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    width:100px;
+    text-align:center;
+    text-transform:uppercase;
+    background-color:#eca100;
+    z-index:2;
+    line-height:25px
+}
+.TipoOva:before,.TipoOva:after{
+    position:absolute;
+    width:5px;
+    height:5px;
+    content:'';
+    z-index:1
+}
+.TipoOva:before{
+    left:0;
+    bottom:5px;
+    background-color:#bb8819;
+    height:7px
+}
+.TipoOva:after{
+    right:5px;
+    top:0;
+    background-color:#bb8819;
+    width:7px
+}
+/*ETIQUETA ESTRENO*/
+.TipoEstreno{
+    position:absolute;
+    left:-5px;
+    top:-5px;
+    overflow:hidden;
+    width:70px;
+    height:70px;
+    z-index:3
+}
+.TipoEstreno span{
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    position:absolute;
+    left:-25px;
+    top:10px;
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    width:100px;
+    text-align:center;
+    text-transform:uppercase;
+    background-color:#2f2777;
+    z-index:2;
+    line-height:25px
+}
+.TipoEstreno:before,.TipoEstreno:after{
+    position:absolute;
+    width:5px;
+    height:5px;
+    content:'';
+    z-index:1
+}
+.TipoEstreno:before{
+    left:0;
+    bottom:5px;
+    background-color:#1b1833;
+    height:7px
+}
+.TipoEstreno:after{
+    right:5px;
+    top:0;
+    background-color:#1b1833;
+    width:7px
+}
+/*INFORMACIÓN*/
+.nombre-color {
+    background: #bb1919;
+}
+.nombre-texto {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+.textoinformacion {
+    background: #dbdbdb;
+    color: #222;
+    display: block;
+    padding: 15px;
+    font-size: 17px;
+    text-align: center;
+}
